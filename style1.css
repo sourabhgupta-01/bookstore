@@ -1,0 +1,443 @@
+/* Basic Setup */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+}
+
+/* PREMIUM NAVBAR */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    background: rgba(10, 25, 47, 0.70);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Logo */
+header .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* NAV MENU */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+nav a:hover,
+nav a.active {
+    background: rgba(255,255,255,0.18);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* Cart */
+.cart {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cart:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    background: rgba(10, 25, 47, 0.70);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+/* Nav Menu */
+nav.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    nav.nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: rgba(10, 25, 47, 0.95);
+        position: absolute;
+        top: 65px;
+        left: 0;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    nav.nav-menu.active {
+        display: flex;
+    }
+
+    nav.nav-menu a {
+        padding: 12px 0;
+        width: 100%;
+    }
+
+    .cart {
+        margin: 10px 0 0 0;
+    }
+}
+@media (max-width: 768px) {
+    header {
+        position: relative; /* ensures absolute children are relative to header */
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: absolute; /* position it relative to header */
+        top: 15px;          /* adjust vertical alignment */
+        right: 20px;        /* right corner */
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    nav.nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background: rgba(10, 25, 47, 0.95);
+        position: absolute;
+        top: 65px;          /* dropdown below header */
+        left: 0;
+        gap: 0;
+        padding: 10px 0;
+    }
+
+    nav.nav-menu.active {
+        display: flex;
+    }
+
+    nav.nav-menu a {
+        padding: 12px 0;
+        width: 100%;
+    }
+
+    .cart {
+        margin: 10px 0 0 0;
+    }
+}
+
+
+/* HERO SECTION */
+.hero {
+    background: url('image/1.jpg') center/cover no-repeat;
+    text-align: center;
+    padding: 150px 20px;
+    color: white;
+}
+
+/* Universal Button */
+.btn {
+    background: #ff5733;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* BOOKS SECTION */
+.books {
+    background: #fff8f2;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.book-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+/* BOOK CARD */
+.book-card {
+    background: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card img {
+    width: 50%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* ABOUT SECTION */
+.about-section {
+    width: 85%;
+    margin: 50px auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: #fafafa;
+    padding: 60px 20px;
+}
+
+.about-content {
+    flex: 1;
+    min-width: 280px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.15);
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+    min-width: 280px;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 0 12px #bbb;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    background: #eef3f8;
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 60px 30px;
+    border-radius: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.contact-form button {
+    padding: 12px 25px;
+    background: #ff5733;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #e14625;
+}
+
+/* CART PAGE */
+.cart-box {
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fefefe;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.cart-item {
+    background: white;
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+.cart-item img {
+    width: 70px;
+    border-radius: 5px;
+}
+
+/* CART DROPDOWN */
+.cart-dropdown {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    width: 300px;
+    background: white;
+    color: black;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 100;
+}
+
+.cart-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.cart-dropdown li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* FOOTER */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+
+/* ============================
+    📱 RESPONSIVE CSS
+===============================*/
+
+/* Tablets */
+@media (max-width: 992px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 120px 15px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+
+    /* Navbar Mobile */
+    header {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 12px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 100px 15px;
+        font-size: 14px;
+    }
+
+    /* Books */
+    .book-card {
+        width: 90%;
+    }
+
+    /* About */
+    .about-section {
+        padding: 30px 10px;
+    }
+
+    .about-image img {
+        max-width: 320px;
+    }
+
+    /* Cart Item */
+    .cart-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cart-item img {
+        width: 90px;
+    }
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Books</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <header>
+    <h1 class="logo">Books Store</h1>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="books.html">Books</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+         <div class="cart" id="cart-icon">
+            🛒 Cart: <span id="cart-count">0</span>
+            <div class="cart-dropdown" id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <ul id="cart-items"></ul>
+                <p>Total: ₹<span id="cart-total">0</span></p>
+                <button id="checkout">Checkout</button>
+            </div>
+    </nav>
+</header>
+
+<section class="books">
+    <h2>Popular Books</h2>
+
+    <div class="book-container">
+
+        <div class="book-card" data-name="The Alchemist" data-price="299">
+            <img src="image/bhagwat_geeta.jpg" alt="Book">
+            <h3>The Alchemist</h3>
+            <p>₹299</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="book-card" data-name="Atomic Habits" data-price="349">
+            <img src="image/kalyug.jpg" alt="Book">
+            <h3>Atomic Habits</h3>
+            <p>₹349</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="book-card" data-name="Rich Dad Poor Dad" data-price="199">
+            <img src="image/ramayan.jpg" alt="Book">
+            <h3>Rich Dad Poor Dad</h3>
+            <p>₹199</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+         <div class="book-card" data-name="The Alchemist" data-price="299">
+            <img src="image/bhagwat_geeta.jpg" alt="Book">
+            <h3>The Alchemist</h3>
+            <p>₹299</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="book-card" data-name="Atomic Habits" data-price="349">
+            <img src="image/kalyug.jpg" alt="Book">
+            <h3>Atomic Habits</h3>
+            <p>₹349</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+         <div class="book-card" data-name="The Alchemist" data-price="299">
+            <img src="image/bhagwat_geeta.jpg" alt="Book">
+            <h3>The Alchemist</h3>
+            <p>₹299</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="book-card" data-name="Atomic Habits" data-price="349">
+            <img src="image/kalyug.jpg" alt="Book">
+            <h3>Atomic Habits</h3>
+            <p>₹349</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+    </div>
+    
+</section>
+
+<footer>
+    <p>© 2025 Simple Book Store. All Rights Reserved.</p>
+</footer>
+
+
+<script>
+let cart = []; // store items
+const cartCountEl = document.getElementById('cart-count');
+const cartItemsEl = document.getElementById('cart-items');
+const cartTotalEl = document.getElementById('cart-total');
+const cartDropdown = document.getElementById('cart-dropdown');
+
+const addButtons = document.querySelectorAll('.add-to-cart');
+const cartIcon = document.getElementById('cart-icon');
+
+addButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const card = button.parentElement;
+        const name = card.dataset.name;
+        const price = parseInt(card.dataset.price);
+
+        cart.push({name, price});
+
+        updateCart();
+        alert(`"${name}" added to cart!`);
+    });
+});
+
+cartIcon.addEventListener('click', () => {
+    cartDropdown.style.display = cartDropdown.style.display === 'block' ? 'none' : 'block';
+});
+
+function updateCart() {
+    cartCountEl.textContent = cart.length;
+
+    // Empty list first
+    cartItemsEl.innerHTML = '';
+
+    let total = 0;
+    cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - ₹${item.price}`;
+        cartItemsEl.appendChild(li);
+        total += item.price;
+    });
+
+    cartTotalEl.textContent = total;
+}
+</script>
+
+</body>
+</html>
