@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style1.css">
 </head>
 <body>
-    <header>
+    <!-- <header>
     <h1 class="logo">Books Store</h1>
     <nav>
         <a href="index.html" class="active">Home</a>
@@ -23,7 +23,36 @@
                 <button id="checkout">Checkout</button>
             </div>
     </nav>
+</header> -->
+
+    <header>
+  <div class="logo">Book Store</div>
+
+  <nav class="nav-menu">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="books.html">Books</a>
+    <a href="contact.html">Contact</a>
+    <!-- <div class="cart">Cart</div> -->
+      <div class="cart" id="cart-icon">
+            🛒 Cart: <span id="cart-count">0</span>
+            <div class="cart-dropdown" id="cart-dropdown">
+                <h3>Your Cart</h3>
+                <ul id="cart-items"></ul>
+                <p>Total: ₹<span id="cart-total">0</span></p>
+                <button id="checkout">Checkout</button>
+            </div>
+  </nav>
+
+  <!-- Hamburger Toggle -->
+  <div class="menu-toggle" id="mobile-menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </div>
 </header>
+
+
 
 <section class="books">
     <h2>Popular Books</h2>
@@ -143,4 +172,5 @@ function updateCart() {
 
 </body>
 </html>
+
 
